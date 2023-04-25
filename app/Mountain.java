@@ -1,4 +1,13 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Mountain {
+
+    ArrayList<RecyclerViewItem> items = new ArrayList<>(Arrays.asList(
+            new RecyclerViewItem("Matterhorn"),
+            new RecyclerViewItem("Mont Blanc"),
+            new RecyclerViewItem("Denali")
+    ));
     @SuppressWarnings("WeakerAccess")
     public class RecyclerViewItem {
 
