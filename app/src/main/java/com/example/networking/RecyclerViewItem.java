@@ -1,3 +1,5 @@
+package com.example.networking;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -5,6 +7,7 @@ import java.util.Arrays;
 public class RecyclerViewItem {
 
     private String title;
+    private RecyclerViewItem adapter;
 
     public RecyclerViewItem(String title) {
         this.title = title;
@@ -19,4 +22,7 @@ public class RecyclerViewItem {
             new RecyclerViewItem("Mont Blanc"),
             new RecyclerViewItem("Denali")
     ));
+
+
+
 }

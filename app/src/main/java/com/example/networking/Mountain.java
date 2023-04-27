@@ -1,11 +1,25 @@
+package com.example.networking;
+
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Mountain {
 
+    public static int length;
     private String ID;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     private String name;
-    //@SerializedName("size")
+    @SerializedName("size")
     private int meter;
 
     public String getID() {
@@ -18,7 +32,7 @@ public class Mountain {
 
     @Override
     public String toString() {
-        return "Mountain{" +
+        return "com.example.networking.Mountain{" +
                 "ID='" + ID + '\'' +
                 ", name='" + name + '\'' +
                 ", meter=" + meter +
@@ -31,6 +45,8 @@ public class Mountain {
             new RecyclerViewItem("Mont Blanc"),
             new RecyclerViewItem("Denali")
     ));
+
+
 
     @SuppressWarnings("WeakerAccess")
     public class RecyclerViewItem {
