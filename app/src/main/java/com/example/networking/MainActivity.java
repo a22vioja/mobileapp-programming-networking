@@ -31,6 +31,11 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     @Override
     public void onPostExecute(String json) {
         Log.d("MainActivity", json);
+
+        RecyclerView view = findViewById(R.id.recycler_view);
+        view.setAdapter(adapter);
+
+        adapter.notifyDataSetChanged();
     }
 
 
