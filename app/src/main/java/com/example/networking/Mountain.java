@@ -20,7 +20,7 @@ public class Mountain {
 
     private String name;
     @SerializedName("size")
-    private int meter;
+
 
     public String getID() {
         return ID;
@@ -30,35 +30,8 @@ public class Mountain {
         this.ID = ID;
     }
 
-    @Override
-    public String toString() {
-        return "com.example.networking.Mountain{" +
-                "ID='" + ID + '\'' +
-                ", name='" + name + '\'' +
-                ", meter=" + meter +
-                ", items=" + items +
-                '}';
-    }
-
-    ArrayList<RecyclerViewItem> items = new ArrayList<>(Arrays.asList(
-            new RecyclerViewItem("Matterhorn"),
-            new RecyclerViewItem("Mont Blanc"),
-            new RecyclerViewItem("Denali")
-    ));
 
 
 
-    @SuppressWarnings("WeakerAccess")
-    public class RecyclerViewItem {
 
-        private String title;
-
-        public RecyclerViewItem(String title) {
-            this.title = title;
-        }
-
-        public String getTitle() {
-            return title;
-        }
-    }
 }
