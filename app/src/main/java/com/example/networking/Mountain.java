@@ -28,8 +28,4 @@ public class Mountain {
         this.ID = ID;
     }
 
-
-
-
-
 }
