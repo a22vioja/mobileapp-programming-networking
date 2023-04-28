@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -16,15 +17,16 @@ import com.example.networking.RecyclerViewItem;
 
 class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    private List<RecyclerViewItem> items;
+    private List<Mountain> items;
     private LayoutInflater layoutInflater;
     private OnClickListener onClickListener;
 
-    RecyclerViewAdapter(Context context, List<RecyclerViewItem> items, OnClickListener onClickListener) {
+    RecyclerViewAdapter(Context context, List<Mountain> items, OnClickListener onClickListener) {
         this.layoutInflater = LayoutInflater.from(context);
         this.items = items;
         this.onClickListener = onClickListener;
     }
+
 
     @Override
     @NonNull
@@ -34,13 +36,14 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewH
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.title.setText(items.get(position).getTitle());
+        holder.title.setText(items.get(position).getID());
     }
 
     @Override
     public int getItemCount() {
         return items.size();
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView title;
@@ -57,7 +60,11 @@ class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewH
         }
     }
 
+    public void addData(List<Mountain> newdata){
+        this.items=newdata;
+    }
+
     public interface OnClickListener {
-        void onClick(RecyclerViewItem item);
+        void onClick(Mountain item);
     }
 }
